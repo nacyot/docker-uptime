@@ -2,8 +2,15 @@ FROM dockerfile/ubuntu
 MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
 RUN \
+  cd /opt &&\
+  wget -O /opt/nodejs.tar.gz http://nodejs.org/dist/v0.10.33/node-v0.10.33-linux-x64.tar.gz &&\
+  tar xvf nodejs.tar.gz &&\
+  mv /opt/node-v0.10.33-linux-x64 /opt/nodejs &&\
+  bash -c "ln -s /opt/nodejs/bin/{node,npm} /usr/local/bin/"
+
+RUN \
   apt-get update &&\
-  apt-get install -y nodejs npm mongodb git
+  apt-get install -y mongodb git python
 
 RUN \
   mkdir /opt/uptime &&\
