@@ -1,0 +1,15 @@
+webhooks:
+  event:
+    up:
+      - 'https://::SLACK_HOOK::'
+    down:
+      - 'https://::SLACK_HOOK::'
+    paused:
+      - 'https://::SLACK_HOOK::'
+    restarted:
+      - 'https://::SLACK_HOOK::'
+  dashboardUrl: '::UPTIME_URL::'
+  channel:      '::SLACK_CHANNEL::'
+  username:     '::SLACK_NAME::'
+  icon_emoji:   ':fire:'
+
