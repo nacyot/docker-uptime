@@ -40,7 +40,8 @@ ADD ./files/ /root/files
 RUN \
   chmod +x /root/files/*.sh &&\
   mv /root/files/default.yaml /opt/uptime/config/default.yaml &&\
-  mv /root/files/slack.yaml /opt/uptime/config/slack.yaml
+  mv /root/files/slack.yaml /opt/uptime/config/slack.yaml &&\
+  mv /root/files/index.js /opt/uptime/plugins/index.js
 
 EXPOSE 8082
 CMD /root/files/setup_configs.sh && /root/files/run.sh
