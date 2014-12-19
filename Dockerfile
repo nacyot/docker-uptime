@@ -14,7 +14,7 @@ RUN \
 
 WORKDIR /opt/uptime
 RUN \
-  git clone https://github.com/fzaninotto/uptime.git /opt/uptime &&\
+  git clone https://github.com/nacyot/uptime.git /opt/uptime &&\
   cd /opt/uptime &&\
   npm install
 
