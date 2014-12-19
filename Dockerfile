@@ -12,11 +12,14 @@ RUN \
   apt-get update &&\
   apt-get install -y mongodb git python
 
+WORKDIR /opt/uptime
 RUN \
-  mkdir /opt/uptime &&\
   git clone https://github.com/fzaninotto/uptime.git /opt/uptime &&\
   cd /opt/uptime &&\
-  npm install --save uptime-slack &&\
+  npm install
+
+RUN \
+  npm install lodash moment https://github.com/nacyot/uptime-slack/archive/0.0.4.tar.gz --save &&\  
   npm install
 
 ENV MONGODB_HOST_PORT 172.17.42.1:27017
